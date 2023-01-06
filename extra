@@ -17,6 +17,7 @@ Add to VsCode
 
 NPM
 Basic NodeJS(in built)(Os,file,http)
+
 NodeJS(full Stack App) (Node-EJs-Mongo-Express)
 Third Party Api (Weather Api)
 Redis  > 6379
@@ -59,10 +60,82 @@ NodeJS
 Single Threaded async non-blocking I/O
 open source
 NPM > node package manager
-(2,216,473)
+2,216,473
+2,217,247
+---------
+774
+--------
+////////////////////////////////////////////////////////////////
+JSON > JavaScript Object Notation
+(Way to reperesnt data)(key value pair)
+[
+    {
+        "name":"Amit",
+        "city":"Helsinki"
+    },
+    {
+        "name":"Nikita",
+        "city":"Paris"
+    },
+    {
+        "name":"Lavish",
+        "city":"Mumbai",
+        "age":17
+    }
+]
+
+////////////////////
+Package.json
+////////////////////
+> First file of the application
+> Entry point
+> Meta data (name,version,description)
+> Package using inside app
+> Script (start,test)
+
+
+//////////////////
+Step to generate package.json
+/////////////////////
+**Nodejs must be install in your laptop
+> Go inside the folder using cmd or terminal
+> npm init
+> Answer all questions
+> type "yes"
+
+
+///////////////////////
+Step to install packages
+//////////////////////
+**Nodejs must be install in your laptop
+> Go inside the folder using cmd or terminal
+> npm i packagename/npm install packagename
 
 
 
 
 NODEJS @ 8:00 AM(IST) by Mr. Aakash
 Day-1 https://youtu.be/lxAC-xzQ7Rs
+Day-2 https://youtu.be/ca-8Mvdswys
+
+
+Greetings from Naresh IT
+Please Complete your Payment for NODEJS by Mr. AAKASH  sir at 8:00AM
+Fee details:
+
+Fee: with videos : 8,000/-
+without videos : 5,000/-
+
+Bank Details 
+Name: Naresh i Technologies
+A/C No. 50200022639833     
+Bank: HDFC
+A/C Type: Current Account
+IFSC Code: HDFC0001627
+MICR Code: 500240035
+Branch Code: 001627
+Branch:  Ameerpet
+
+After Payment Please share your Payment Screenshot to ADMIN in WhatsApp
+
+For Queries Contact Admin Shubham: 7337313415 ( Only Whatsapp)
