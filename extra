@@ -118,6 +118,7 @@ NODEJS @ 8:00 AM(IST) by Mr. Aakash
 Day-1 https://youtu.be/lxAC-xzQ7Rs
 Day-2 https://youtu.be/ca-8Mvdswys
 Day-3 https://youtu.be/K8EMXVjPxwQ
+Day-4 https://youtu.be/ik4nDVJlmVo
 
 
 Greetings from Naresh IT
@@ -146,3 +147,21 @@ For Queries Contact Admin Shubham: 7337313415 ( Only Whatsapp)
 function add(a,b){
     
 }
+
+
+///es5
+Ecma Script5
+
+function add(a,b){
+    return a+b
+}
+
+add(1,2)
+3
+
+///es6
+Ecma Script6
+
+let add = (a,b) =>  {return a+b}
+
+add(1,2)

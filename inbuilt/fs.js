@@ -16,10 +16,10 @@ let fs = require('fs');
 // })
 
 
-// fs.rename('myCode.txt','myCode1.txt',function(err){
-//     if(err) throw err;
-//     console.log('File Renamed')
-// })
+fs.rename('myCode.txt','myCode1.txt',function(err){
+    if(err) throw err;
+    console.log('File Renamed')
+})
 
 fs.unlink('myCode1.txt',function(err){
     if(err) throw err;
