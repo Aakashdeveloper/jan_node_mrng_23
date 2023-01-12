@@ -4,11 +4,18 @@
   "description": "this is about node",
   "main": "fs.js",
   "scripts": {
-    "start":"node staticapi.js"
+    "start": "node staticapi.js",
+    "dev": "nodemon http.js"
   },
   "keywords": [
     "node"
   ],
   "author": "developer funnel",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.7"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
