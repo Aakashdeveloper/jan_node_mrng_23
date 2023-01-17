@@ -192,3 +192,14 @@ C > Create >  Post
 R > Read   >  Get
 U > Update >  Put
 D > Delete >  Delete
+
+
+/////////////////////////////
+var a = 10
+var b = "my age is "+a;
+"my age is 10"
+
+//es6
+var a = 10
+var b = `my age is ${a}`
+"my age is 10"

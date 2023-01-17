@@ -1,0 +1,30 @@
+let express = require('express');
+let app = express();
+let port = 8811;
+
+//routes
+app.get('/',function(req,res){
+    res.send("Hii From Deault Route")
+})
+
+app.get('/category',function(req,res){
+    res.send("Category Route")
+})
+
+app.get('/details',function(req,res){
+    res.send("Category Details")
+})
+
+app.get('/products',function(req,res){
+    res.send("Products Route")
+})
+
+app.get('/details',function(req,res){
+    res.send("Products Details")
+})
+
+//create server
+app.listen(port,function(err){
+    if(err) throw err;
+    console.log(`listing to port ${port}`)
+})
