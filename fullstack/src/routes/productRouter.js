@@ -519,7 +519,8 @@ var products = [
 
 productRouter.route('/')
     .get(function(req,res){
-        res.send(products)
+        //res.send(products)
+        res.render('products',{products,title:'Products Page'})
     })
 
 productRouter.route('/details')

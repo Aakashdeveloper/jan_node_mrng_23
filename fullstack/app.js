@@ -12,7 +12,6 @@ app.set('views','./src/views')
 //view engine name
 app.set('view engine', 'ejs')
 
-
 //routes
 app.get('/',function(req,res){
     //res.send("<h1>Hii From Default Route</h1>")
@@ -20,7 +19,7 @@ app.get('/',function(req,res){
 })
 
 app.use('/category',categoryRouter);
-app.use('/product',productRouter);
+app.use('/products',productRouter);
 
 //create server
 app.listen(port,function(err){
