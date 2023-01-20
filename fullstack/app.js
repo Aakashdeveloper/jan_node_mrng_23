@@ -1,8 +1,15 @@
 let express = require('express');
 let app = express();
 let port = 8811;
-let categoryRouter = require('./src/routes/categoryRouter');
-let productRouter = require('./src/routes/productRouter');
+
+let menu = [
+    {link:'/',name:'Home'},
+    {link:'/category',name:'Category'},
+    {link:'/products',name:'Products'}
+]
+
+let categoryRouter = require('./src/routes/categoryRouter')(menu);
+let productRouter = require('./src/routes/productRouter')(menu);
 
 ///middleware (supporting lib)
 // static files path
@@ -15,7 +22,7 @@ app.set('view engine', 'ejs')
 //routes
 app.get('/',function(req,res){
     //res.send("<h1>Hii From Default Route</h1>")
-    res.render('index',{title:'Coming From Code',pageNo:1})
+    res.render('index',{title:'Home',menu})
 })
 
 app.use('/category',categoryRouter);

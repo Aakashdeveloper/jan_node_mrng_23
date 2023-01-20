@@ -6,3 +6,41 @@ C:/data
 
 inside data make folder by the name of db
 C:/data/db
+
+# Mac
+
+open terminal
+> mkdir data/db
+
+Server > 27017 default
+Client > Test our query
+
+#  Window 
+/// Start server in window
+> open cmd and go inside the bin folder
+> cd ProgramFile/mongodb/5.1/server/bin
+> mongod
+(start mongo server)
+(do not close this cmd)
+
+/// Start client in window
+> open cmd and go inside the bin folder
+> cd ProgramFile/mongodb/5.1/server/bin
+> mongo
+(open interface to test query )
+
+# mac
+/// Start server
+> open terminal
+> mongod
+(start mongo server)
+(do not close this terminal)
+
+/// Start client
+> open terminal
+> mongo
+(open interface to test query )
+
+///////////
+To see all database
+> show dbs
