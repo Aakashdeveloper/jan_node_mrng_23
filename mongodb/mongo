@@ -44,3 +44,73 @@ Client > Test our query
 ///////////
 To see all database
 > show dbs
+
+SQL
+
+RollNo | Hindi | English | Computer |
+   1   |  78   |         |          |
+   2   |       |   76    |          |
+   3   |  80   |         |   88     |
+
+
+MongoDb
+[
+    {
+        RollNo:1,
+        Hindi:78
+    },
+    {
+        RollNo:2,
+        English:76
+    },
+    {
+        RollNo:3,
+        Hindi:80,
+        Computer:88
+    }
+]
+
+SQl        MongoDB
+Database   Database
+Table      Collection
+Row        document
+Select     Find
+Insert     Insert
+Update     Update
+Delete     Remove
+
+
+/////////////////////////
+# To See All DB
+> show dbs
+
+# To Go inside db
+> use db
+
+# To See collection
+> show collections
+
+# To Check data in collection
+> db.collectionName.find()
+
+# Step to create database
+> use db
+
+# To insert record
+db.collectionName.insert({})
+
+db.users.insert({Name:'Amit',City:'Delhi',Age:23})
+db.users.insert({Name:'Nikita',Age:21})
+
+_id > default key (primary key)
+12byte in size
+5bytes (Random Number)
+3bytes (Series)
+4bytes (Timestamp)
+
+
+db.users.insert({_id:1,Name:'John',City:'Amsterdam'})
+db.users.insert({_id:2,Name:'Prakash',City:'Pune',isAdmin:true})
+
+
+db.users.insert({_id:1,Name:'Vishali',City:'Mumbai'})
