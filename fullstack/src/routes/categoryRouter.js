@@ -1,34 +1,27 @@
 let express = require('express');
 let categoryRouter = express.Router();
+let mongodb = require('mongodb').MongoClient;
+let url = process.env.Mongo_Url;
 
-var category = [
-    {
-        "id":1,
-        "category": "Fashion",
-        "thumb":"https://i.ibb.co/56VP0Fn/cloths.jpg"
-    },
-    {
-        "id":2,
-        "category":"Electronics",
-        "thumb":"https://i.ibb.co/pw5Wtdx/appliances.jpg"
-    },
-    {
-        "id":3,
-        "category":"Essentials",
-        "thumb":"https://i.ibb.co/0cw34xm/essentials.jpg"
-    },
-    {
-        "id":4,
-        "category": "Footwear",
-        "thumb":"https://i.ibb.co/r3SZq8S/footware.jpg"
-    }
-]
 
 function router(menu){
     categoryRouter.route('/')
         .get(function(req,res){
-        //res.send(category)
-        res.render('category',{title:'Category Page',data:category,menu})
+        mongodb.connect(url,function(err,dc){
+            if(err){
+                res.status(500).send('Error While connecting')
+            }else{
+                let dbObj = dc.db('janmrng');
+                dbObj.collection('catgeory').find().toArray(function(err,result){
+                    if(err){
+                        res.status(203).send('Error While Fetching')
+                    }else{
+                        res.render('category',{title:'Category Page',data:result,menu})
+                    }
+                })
+            }
+        })
+        
     })
 
     categoryRouter.route('/details')

@@ -31,6 +31,7 @@ Api with NodeJS(Rest)>1
 Swagger
 Testing
 DashBoard(Crud)
+
 Github
 --Deployment of app---
 Heroku
@@ -38,6 +39,7 @@ Pm2
 Docker
 Nginx
 Jenkins
+
 Login/Logout(JWT)
 Oauth(with github)
 TelegramChat
