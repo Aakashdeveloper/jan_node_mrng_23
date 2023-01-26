@@ -114,3 +114,13 @@ db.users.insert({_id:2,Name:'Prakash',City:'Pune',isAdmin:true})
 
 
 db.users.insert({_id:1,Name:'Vishali',City:'Mumbai'})
+
+//
+db.collection.find()
+* Find All
+> db.products.find().pretty()
+
+* Find with Condition
+> db.products.find({category_id:2,product_name : "Washing Machine"}).pretty()
+
+> db.products.find({category_id:1,Color:"Red"}).pretty()

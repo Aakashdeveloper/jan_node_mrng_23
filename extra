@@ -17,11 +17,12 @@ Add to VsCode
 
 NPM
 Basic NodeJS(in built)(Os,file,http)
-////////////////////////////////
 NodeJS(full Stack App) (Node-EJs-Mongo-Express)
 Third Party Api (Weather Api)
+////////////////////////////////
 Redis  > 6379
 ImageUpload
+
 ImageUpload(formidable)
 RedisWithMongo
 Node-Es6(.babel)
@@ -212,3 +213,15 @@ function add(a,b){
 }
 
 add(10,20)
+
+params
+> what we pass after /
+> Need to define in the route
+> If defined than need to pass in url
+> Use for passing 1 or  values
+
+queryparams
+> waht we pass after ?
+> No Need to define
+> not complusory to pass
+> use for passing multiple use
