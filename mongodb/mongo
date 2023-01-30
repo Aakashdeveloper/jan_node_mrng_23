@@ -129,3 +129,5 @@ db.collection.find()
 https://cloud.mongodb.com/
 Database Access> Add New Database User>  Add Username password > Add User
 Network Access> Add IP Address > Access List Entry:0.0.0.0/0 > Confirm
+
+mongodb+srv://test:9J6Guhh@cluster0.f8vmc.mongodb.net/?retryWrites=true&w=majority
