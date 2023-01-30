@@ -124,3 +124,8 @@ db.collection.find()
 > db.products.find({category_id:2,product_name : "Washing Machine"}).pretty()
 
 > db.products.find({category_id:1,Color:"Red"}).pretty()
+
+
+https://cloud.mongodb.com/
+Database Access> Add New Database User>  Add Username password > Add User
+Network Access> Add IP Address > Access List Entry:0.0.0.0/0 > Confirm
