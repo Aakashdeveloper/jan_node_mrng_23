@@ -19,12 +19,12 @@ NPM
 Basic NodeJS(in built)(Os,file,http)
 NodeJS(full Stack App) (Node-EJs-Mongo-Express)
 Third Party Api (Weather Api)
-////////////////////////////////
 Redis  > 6379
+////////////////////////////////
 ImageUpload
-
-ImageUpload(formidable)
 RedisWithMongo
+ImageUpload(formidable)
+
 Node-Es6(.babel)
 MongoDb Basic >27017  (local/cloud)
 Zomato App backend
@@ -225,3 +225,12 @@ queryparams
 > No Need to define
 > not complusory to pass
 > use for passing multiple use
+
+//////Redis
+set keyname valur ex time
+KEYS *
+set city Delhi
+get keyname
+del keyname
+FLUSHALL
+
