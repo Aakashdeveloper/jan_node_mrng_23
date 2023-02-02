@@ -16,6 +16,17 @@ app.get('/',(req,res) => {
     res.render('index')
 })
 
+app.post('/profile',(req,res) => {
+    console.log(req.files)
+    console.log(req.body)
+    const imageFile = req.files.fileName;
+    // uploading image
+    imageFile.mv(`${__dirname}/public/images/${imageFile.name}`,(err,data) => {
+        if(err) throw err;
+        res.render('display',{title:req.body.imgName,image:imageFile.name})
+    })
+})
+
 app.listen(port,() => {
     console.log(`listening on port ${port}`)
 })
