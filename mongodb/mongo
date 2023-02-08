@@ -131,3 +131,70 @@ Database Access> Add New Database User>  Add Username password > Add User
 Network Access> Add IP Address > Access List Entry:0.0.0.0/0 > Confirm
 
 mongodb+srv://test:@cluster0.f8vmc.mongodb.net/?retryWrites=true&w=majority
+
+//projection
+
+db.restaurants.find({state_id:2},{restaurant_name:1,address:1,_id:0})
+
+
+db.restaurants.find({},{restaurant_name:1,cost:1,_id:0})
+
+db.restaurants.find({},{restaurant_name:1,cost:1,_id:0}).sort({cost:1})
+
+db.restaurants.find({},{restaurant_name:1,cost:1,_id:0}).sort({cost:1}).limit(3)
+
+
+db.restaurants.find({},{restaurant_name:1,cost:1,_id:0}).sort({cost:1}).skip(0).limit(3) 0-3
+db.restaurants.find({},{restaurant_name:1,cost:1,_id:0}).sort({cost:1}).skip(3).limit(3) 3-6
+db.restaurants.find({},{restaurant_name:1,cost:1,_id:0}).sort({cost:1}).skip(6).limit(3) 6-9
+db.restaurants.find({},{restaurant_name:1,cost:1,_id:0}).sort({cost:1}).skip(9).limit(3) 9-12
+
+
+
+///update
+
+db.users.update(
+    {condition},
+    {values}
+)
+
+
+db.users.update(
+    {"name":"Deepika"},
+    {
+        $set:{
+            "address":"654 Model Town",
+            "city":"Delhi"
+        }
+    }
+)
+
+
+db.users.update(
+    {"name":"Deepika"},
+    {
+        $set:{
+            "role":"Super Admin"
+        }
+    }
+)
+
+
+db.users.update(
+    {"name":"Deepika"},
+    {
+        $unset:{
+            "__v":0,
+            "phone":0
+        }
+    }
+)
+
+//Delete
+
+> Delete all the records
+db.user.remove({})
+
+
+> Delete particular records
+db.user.remove({name:"Amit"})
