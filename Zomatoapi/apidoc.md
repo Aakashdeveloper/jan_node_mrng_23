@@ -12,9 +12,28 @@
 (Get) http://localhost:1009/mealTypes
 
 // Page2 (listing Page)
+> (Get) Restaurants wrt to meal
+* http://localhost:1009/restaurants?mealId=5
+* http://localhost:1009/restaurants?mealId=1&stateId=3
+
+> (Get) Restaurants wrt to meal + cuisine
+* http://localhost:1009/filter/2?cuisineId=4
+
+> (Get) Restaurants wrt to meal + cost
+
+> (Get) Restaurants sort wrt to cost
+> (Get) Pagination
 
 // Page3 (details Page)
+> (Get) Restaurants Details
+> (Get) Menu Wrt to restaurants
 
 // Page4 (placeOrder Page)
+> (POST) Menu details
+> (POST) Place Order
 
 // Page5 (OrderListing Page)
+> (Get) List All order placed
+> (Get) Order wrt to email
+> (Delete) Delete order
+> (Put) Update Order

@@ -45,8 +45,31 @@ app.get('/location',(req,res) => {
 app.get('/restaurants',(req,res) => {
     let query = {};
     let stateId = Number(req.query.stateId);
-    if(stateId){
+    let mealId = Number(req.query.mealId);
+    if(stateId && mealId){
+        query = {state_id:stateId,'mealTypes.mealtype_id':mealId}
+    }
+    else if(stateId){
         query = {state_id:stateId}
+    }else if(mealId){
+        query={'mealTypes.mealtype_id':mealId}
+    }
+    db.collection('restaurants').find(query).toArray((err,data) => {
+        res.status(200).send(data)
+    })
+})
+
+//filters
+app.get('/filter/:mealId',(req,res) => {
+    let query = {}
+    let mealId = Number(req.params.mealId);
+    let cuisineId = Number(req.query.cuisineId);
+
+    if(cuisineId){
+        query = {
+            'mealTypes.mealtype_id':mealId,
+            'cuisines.cuisine_id':cuisineId
+        }
     }
     db.collection('restaurants').find(query).toArray((err,data) => {
         res.status(200).send(data)
