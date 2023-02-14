@@ -36,10 +36,32 @@
 
 // Page4 (placeOrder Page)
 > (POST) Menu details
+* http://localhost:1009/menuItem
+ {
+ 	"id":[4,7,33]
+ }
+
 > (POST) Place Order
+* http://localhost:1009/placeOrder
+{
+	"orderId" : 1,
+	"name" : "Isha",
+	"email" : "isha@gmail.com",
+	"address" : "Hom 65",
+	"phone" : 8934645457,
+	"cost" : 811,
+	"menuItem" : [
+		23,56,78
+	]
+}
 
 // Page5 (OrderListing Page)
 > (Get) List All order placed
+* http://localhost:1009/orders
 > (Get) Order wrt to email
+* http://localhost:1009/orders?email=isha@gmail.com
+
 > (Delete) Delete order
+* http://localhost:1009/removeOrder
+
 > (Put) Update Order

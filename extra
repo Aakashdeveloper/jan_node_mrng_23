@@ -235,3 +235,14 @@ FLUSHALL
 
 Cors
 > Cross origin resource Sharing
+
+
+let a = [0,1,2,3]
+a.map((data) => {
+    return data*2
+})
+
+let a = [0,1,2,3]
+a.filter((data) => {
+    return data*2
+})

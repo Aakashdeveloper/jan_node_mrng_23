@@ -127,6 +127,58 @@ app.get('/menu/:id',(req,res) => {
     })
 })
 
+//place order
+app.post('/placeOrder',(req,res) => {
+    let data = req.body;
+    db.collection('orders').insert(data,(err) => {
+        if(err) throw err;
+        res.send('Order Placed')
+    })
+})
+
+
+//get order
+app.get('/orders',(req,res) => {
+    let query = {};
+    let email = req.query.email;
+    if(email){
+        query = {email}
+    } 
+    db.collection('orders').find(query).toArray((err,data) => {
+        if(err) throw err;
+        res.send(data)
+    })
+})
+
+//menu wrt to id {[4,8,5]}
+app.post('/menuItem',(req,res) => {
+    if(Array.isArray(req.body.id)){
+        db.collection('menu').find({menu_id:{$in:req.body.id}}).toArray((err,data) => {
+            if(err) throw err;
+            res.send(data)
+        })
+    }else{
+        res.send('Please Pass the array')
+    }
+});
+
+//delete order
+app.delete(`/removeOrder`,(req,res) => {
+    let id = mongo.ObjectId(req.body._id);
+    db.collection('orders').find({_id:id}).toArray((err,result) => {
+        if(result.length !== 0){
+            db.collection('orders').deleteOne({_id:id},(err,data) => {
+                if(err) throw err;
+                res.send('Order Deleted')
+            })
+        }else{
+            res.send('No Order Found')
+        }
+    })
+})
+
+
+
 
 MongoClient.connect(mongoUrl,(err,client) => {
     if(err) console.log(`Error While Connecting to mongo`);
