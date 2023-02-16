@@ -150,6 +150,21 @@ app.get('/orders',(req,res) => {
     })
 })
 
+//update orders
+app.put('/updateOrders',(req,res)=>{
+    db.collection('orders').updateOne(
+        {_id:mongo.ObjectId(req.body._id)},
+        {
+            $set:{
+                "status":req.body.status
+            }
+        },(err,result) => {
+            if(err) throw err;
+            res.send('Order status updated')
+        }
+    )
+})
+
 //menu wrt to id {[4,8,5]}
 app.post('/menuItem',(req,res) => {
     if(Array.isArray(req.body.id)){

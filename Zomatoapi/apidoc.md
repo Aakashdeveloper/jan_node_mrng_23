@@ -65,3 +65,8 @@
 * http://localhost:1009/removeOrder
 
 > (Put) Update Order
+* http://localhost:1009/orders
+{
+	 "_id": "63a853ea0e78b8c74289445b",
+	 "status":"Cancelled"
+}

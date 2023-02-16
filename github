@@ -1,0 +1,26 @@
+// first time from new folder
+
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/Aakashdeveloper/febtest.git
+git push -u origin master
+
+// next all time
+git add .
+git commit -m "first commit"
+git push
+
+/////////////
+Branches
+//////////
+git checkout -b branchname
+
+git branches
+
+git add .
+git commit -m "a"
+git push -u origin branchname
+
+
+git clone https://github.com/Aakashdeveloper/febtest
