@@ -27,15 +27,17 @@ Node-Es6(.babel)
 MongoDb Basic >27017  (local/cloud)
 Zomato App backend
 Api with NodeJS(Rest)>1
+Github
+--Deployment of app---
+render
+Pm2
+
 ////////////////////////////////
 Swagger
 Testing
 DashBoard(Crud)
 
-Github
---Deployment of app---
-render
-Pm2
+
 Docker
 Nginx
 Jenkins
@@ -246,3 +248,13 @@ let a = [0,1,2,3]
 a.filter((data) => {
     return data*2
 })
+
+> start cmd as admin
+> npm i -g pm2
+
+
+pm2 start app.js
+pm2 list
+pm2 stop app.js
+
+pm2 start app.js -i processNumbers

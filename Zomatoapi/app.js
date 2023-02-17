@@ -195,7 +195,7 @@ app.delete(`/removeOrder`,(req,res) => {
 
 
 
-MongoClient.connect(mongoUrl,(err,client) => {
+MongoClient.connect(mongoUrl, { useNewUrlParser: true },(err,client) => {
     if(err) console.log(`Error While Connecting to mongo`);
     db = client.db('internfeb')
     app.listen(port,() => {
