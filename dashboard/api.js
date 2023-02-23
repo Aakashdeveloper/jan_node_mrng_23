@@ -11,12 +11,23 @@ const collection = client.db('internfeb').collection('dashboard');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const port = process.env.PORT || 7710;
+let swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+let package = require('./package.json')
+
+swaggerDocument.info.version = package.version;
+app.use('/api-doc',swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(cors());
 
+app.get('/health',(req,res) => {
+    res.send('health ok')
+})
+
+/**Get User*/
 app.get('/users',async(req,res) => {
     const output = []
     let query = {};
@@ -50,14 +61,13 @@ app.get('/users',async(req,res) => {
     res.send(output)
 })
 
-
+/**Insert User*/
 app.post('/addUser',async(req,res) => {
     await collection.insertOne(req.body)
     res.send('Data Added')
 })
 
-
-
+/**Update User*/
 app.put('/updateUser',async(req,res)=>{
     await collection.updateOne(
         {_id:new Mongo.ObjectId(req.body._id)},
@@ -74,13 +84,40 @@ app.put('/updateUser',async(req,res)=>{
     res.send('Record Update')
 })
 
-
+/**Delete User*/
 app.delete('/deleteUser',async(req,res) => {
     await collection.deleteOne({
         _id:new Mongo.ObjectId(req.body._id)
     })
     res.send('User Deleted')
 })
+
+/**Activated User*/
+app.put('/activateUser',async(req,res)=>{
+    await collection.updateOne(
+        {_id:new Mongo.ObjectId(req.body._id)},
+        {
+            $set:{
+                isActive: true
+            }
+        }
+    )
+    res.send('User Activated')
+})
+
+/**Deactiavte User*/
+app.put('/deactivateUser',async(req,res)=>{
+    await collection.updateOne(
+        {_id:new Mongo.ObjectId(req.body._id)},
+        {
+            $set:{
+                isActive: false
+            }
+        }
+    )
+    res.send('User Deactiavted')
+})
+
 
 app.listen(port,() => {
     main()

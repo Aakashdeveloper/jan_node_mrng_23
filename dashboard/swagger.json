@@ -1,0 +1,185 @@
+{
+    "openapi":"3.0.0",
+    "info":{
+        "description":"This is api for user dashboard",
+        "version":"__version__"
+    },
+    "tags":[
+        {
+            "name":"PUBLIC ROUTE",
+            "description":"PUBLIC ROUTE"
+        }
+    ],
+    "paths":{
+        "/health":{
+            "summary":"Testing App Health",
+            "get":{
+                "description":"Testing Health",
+                "tags":["PUBLIC ROUTE"],
+                "responses":{
+                    "200":{
+                        "description":"Health Ok"
+                    },
+                    "400":{
+                        "description":"Health Not Ok"
+                    }
+                }
+            }
+        },
+        "/users":{
+            "summary":"Testing User",
+            "get":{
+                "description":"User Information",
+                "tags":["PUBLIC ROUTE"],
+                "parameters":[
+                    {
+                        "in":"query",
+                        "name":"role",
+                        "schema":{
+                            "type":"string"
+                        },
+                        "description":"Choose user role"
+                    },
+                    {
+                        "in":"query",
+                        "name":"city",
+                        "schema":{
+                            "type":"string"
+                        },
+                        "description":"Choose user city"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Health Ok"
+                    },
+                    "400":{
+                        "description":"Health Not Ok"
+                    }
+                }
+            }
+        },
+        "/user/{id}":{
+            "summary":"Testing User",
+            "get":{
+                "description":"User Information",
+                "tags":["PUBLIC ROUTE"],
+                "parameters":[
+                    {
+                        "in":"path",
+                        "name":"id",
+                        "required":true,
+                        "schema":{
+                            "type":"string"
+                        },
+                        "description":"Enter User Id"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Health Ok"
+                    },
+                    "404":{
+                        "description":"Route not found"
+                    }
+                }
+            }
+        },
+        "/addUser":{
+            "summary":"Adding User",
+            "post":{
+                "description":"Adding User",
+                "tags":["PUBLIC ROUTE"],
+                "requestBody":{
+                    "required":"true",
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "id":"string"
+                            },
+                            "example":{
+                                "name": "Keerti",
+                                "city": "Amsterdam",
+                                "phone": 7868867867,
+                                "role": "User",
+                                "isActive": true
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Health Ok"
+                    },
+                    "400":{
+                        "description":"Health Not Ok"
+                    }
+                }
+            }
+        },
+        "/updateUser":{
+            "summary":"Update User",
+            "put":{
+                "description":"Update User",
+                "tags":["PUBLIC ROUTE"],
+                "requestBody":{
+                    "required":"true",
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "id":"string"
+                            },
+                            "example":{
+                                "_id":"",
+                                "name": "Keerti",
+                                "city": "Amsterdam",
+                                "phone": 7868867867,
+                                "role": "User",
+                                "isActive": true
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Health Ok"
+                    },
+                    "400":{
+                        "description":"Health Not Ok"
+                    }
+                }
+            }
+        },
+        "/deleteUser":{
+            "summary":"Delete User",
+            "delete":{
+                "description":"Delete User",
+                "tags":["PUBLIC ROUTE"],
+                "requestBody":{
+                    "required":"true",
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"object",
+                                "id":"string"
+                            },
+                            "example":{
+                                "_id":""
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200":{
+                        "description":"Health Ok"
+                    },
+                    "400":{
+                        "description":"Health Not Ok"
+                    }
+                }
+            }
+        }
+    }
+}
