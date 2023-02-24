@@ -67,6 +67,8 @@ app.post('/addUser',async(req,res) => {
     res.send('Data Added')
 })
 
+
+
 /**Update User*/
 app.put('/updateUser',async(req,res)=>{
     await collection.updateOne(
