@@ -61,6 +61,18 @@ app.get('/users',async(req,res) => {
     res.send(output)
 })
 
+
+app.get('/user/:id',async(req,res) => {
+    const output = []
+    let query = {_id:new Mongo.ObjectId(req.params.id)};
+    const cursor = collection.find(query);
+        for await (const doc of cursor) {
+        output.push(doc)
+    }
+    cursor.closed; 
+    res.send(output)
+})
+
 /**Insert User*/
 app.post('/addUser',async(req,res) => {
     await collection.insertOne(req.body)
