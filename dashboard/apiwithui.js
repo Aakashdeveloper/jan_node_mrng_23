@@ -17,6 +17,9 @@ let package = require('./package.json')
 
 swaggerDocument.info.version = package.version;
 app.use('/api-doc',swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+app.use(express.static(__dirname+'/public'));
+app.set('views','./src/views');
+app.set('view engine','ejs');
 
 
 app.use(bodyParser.urlencoded({extended: true}))
@@ -27,6 +30,19 @@ app.get('/health',(req,res) => {
     res.send('health ok')
 })
 
+app.get('/',async (req,res) => {
+    const output = []
+    const cursor = collection.find();
+        for await (const doc of cursor) {
+        output.push(doc)
+    }
+    cursor.closed; 
+    res.render('index',{data:output})
+})
+
+app.get('/new',(req,res)=>{
+    res.render('forms')
+})
 
 /**Get User*/
 app.get('/users',async(req,res) => {
@@ -76,8 +92,15 @@ app.get('/user/:id',async(req,res) => {
 
 /**Insert User*/
 app.post('/addUser',async(req,res) => {
-    await collection.insertOne(req.body)
-    res.send('Data Added')
+    let data = {
+        name:req.body.name,
+        city:req.body.city,
+        phone:req.body.phone,
+        role:req.body.role?req.body.role:'User',
+        isActive:true
+    }
+    await collection.insertOne(data)
+    res.redirect('/')
 })
 
 

@@ -34,10 +34,8 @@ Pm2
 
 Swagger
 Testing
-////////////////////////////////
 DashBoard(Crud)
-
-
+////////////////////////////////
 Docker
 Nginx
 Jenkins
@@ -45,10 +43,13 @@ Jenkins
 Login/Logout(JWT)
 Oauth(with github)
 TelegramChat
+
 GraphQl API
 Paytm-Payment
+
 Oauth(with google)
 NodeJs with postgres
+
 Email With Node(nodemailer)
 Chatapp
 FIREBASE

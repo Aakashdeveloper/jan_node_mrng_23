@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node api.js",
     "dev": "nodemon api.js",
+    "ui": "nodemon apiwithui.js",
     "test":"mocha --timeout 10000"
   },
   "keywords": [],
