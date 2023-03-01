@@ -35,12 +35,13 @@ Pm2
 Swagger
 Testing
 DashBoard(Crud)
+Login/Logout(JWT)
 ////////////////////////////////
 Docker
 Nginx
 Jenkins
 
-Login/Logout(JWT)
+
 Oauth(with github)
 TelegramChat
 
@@ -262,3 +263,7 @@ pm2 start app.js -i processNumbers
 
 
 npm i chai chai-http mocha --save-dev
+
+
+/////////////
+https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps
