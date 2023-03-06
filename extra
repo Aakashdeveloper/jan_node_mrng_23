@@ -37,20 +37,20 @@ Testing
 DashBoard(Crud)
 Login/Logout(JWT)
 Oauth(with github)
+TelegramChat
+Oauth(with google)
 ////////////////////////////////
 Docker
 Nginx
 Jenkins
 
-TelegramChat
-
 GraphQl API
-Paytm-Payment
+Email With Node(nodemailer)
 
-Oauth(with google)
+Paytm-Payment
 NodeJs with postgres
 
-Email With Node(nodemailer)
+
 Chatapp
 FIREBASE
 --------NOT---------
