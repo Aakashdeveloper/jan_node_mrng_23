@@ -31,6 +31,8 @@ Github
 --Deployment of app---
 render
 Pm2
+Nginx
+
 
 Swagger
 Testing
@@ -39,19 +41,14 @@ Login/Logout(JWT)
 Oauth(with github)
 TelegramChat
 Oauth(with google)
-////////////////////////////////
-Docker
-Nginx
-Jenkins
-
 GraphQl API
 Email With Node(nodemailer)
-
 Paytm-Payment
-NodeJs with postgres
-
-
+NodeJs with postgres (5432)
 Chatapp
+////////////////////////////////
+Docker
+Jenkins
 FIREBASE
 --------NOT---------
 React/Angular
@@ -266,3 +263,21 @@ npm i chai chai-http mocha --save-dev
 
 /////////////
 https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps
+
+
+/////dummy Api/////
+> open cmd as admin
+> npm i -g json-server
+
+/////
+> open cmd
+> go inside folder
+> json-server --watch db.json --port 7799
+
+ pg_ctl -D /usr/local/var/postgres start
+
+ https://dashboard.paytm.com/login/
+
+
+localhost:8080 frontend
+localhost:3200 backend

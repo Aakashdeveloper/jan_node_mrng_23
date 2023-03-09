@@ -1,7 +1,8 @@
 import express from 'express';
 import request from 'request';
 let app = express();
-let port = process.env.PORT || 7660;
+//let port = process.env.PORT || 7660;
+let port =  7660;
 
 app.use(express.static(__dirname+'/public'));
 app.set('views','./src/views')

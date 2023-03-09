@@ -1,18 +1,16 @@
 {
-  "name": "graphapi",
+  "name": "chatapp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.3.4",
-    "express": "^4.18.2",
-    "express-graphql": "^0.12.0",
-    "graphql": "^15.8.0"
+    "express": "^4.17.3",
+    "socket.io": "^2.2.0"
   }
 }
