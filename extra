@@ -46,7 +46,6 @@ Email With Node(nodemailer)
 Paytm-Payment
 NodeJs with postgres (5432)
 Chatapp
-////////////////////////////////
 Docker
 Jenkins
 FIREBASE
@@ -54,8 +53,6 @@ FIREBASE
 React/Angular
 Html/css/jquery
 
-microservice(aws lambda)
-upload to s3 bucket
 
 NodeJS
 
@@ -281,3 +278,13 @@ https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth
 
 localhost:8080 frontend
 localhost:3200 backend
+
+
+docker build . -t imagename
+docker run -p 9760:8700 imagename
+
+
+npm i -g firebase
+
+
+https://github.com/Aakashdeveloper/Node-Interview-Question
